@@ -14,14 +14,18 @@ var detectNetwork = function(cardNumber) {
     return 'Diner\'s Club'
   } else if (cardNumber.length === 15 && (cardNumber.substring(0,2) === '34' || cardNumber.substring(0,2) === '37')) {
     return 'American Express'
+  } else if ((cardNumber.substring(0,4) === '4903' || cardNumber.substring(0,4) === '4905' || cardNumber.substring(0,4) === '4911' || cardNumber.substring(0,4) === '4936' || cardNumber.substring(0,6) === '564182' || cardNumber.substring(0,6) === '633110' || cardNumber.substring(0,4) === '6333' || cardNumber.substring(0,4) === '6759') && (cardNumber.length === 16 || cardNumber.length === 18 || cardNumber.length === 19)) {
+    return 'Switch'
   } else if (cardNumber.substring(0,1) === '4' && (cardNumber.length === 13 || cardNumber.length === 16 || cardNumber.length === 19)) {
     return 'Visa'
   } else if (cardNumber.length === 16 && (cardNumber.substring(0,2) === '51' || cardNumber.substring(0,2) === '52' || cardNumber.substring(0,2) === '53' || cardNumber.substring(0,2) === '54' || cardNumber.substring(0,2) === '55')) {
     return 'MasterCard'
-  } else if ((cardNumber.length === 16 || cardNumber.length === 19) && (cardNumber.substring(0,4) === '6011' || cardNumber.substring(0,7) === '644-649' || ccardNumber.substring(0,2) === '65')) {
+  } else if ((cardNumber.length === 16 || cardNumber.length === 19) && (cardNumber.substring(0,4) === '6011' || cardNumber.substring(0,3) === '644' ||cardNumber.substring(0,3) === '645' ||cardNumber.substring(0,3) === '646' ||cardNumber.substring(0,3) === '647' ||cardNumber.substring(0,3) === '648' ||cardNumber.substring(0,3) === '649' || cardNumber.substring(0,2) === '65')) {
     return 'Discover'
-  } else if ((cardNumber.length <= 19 && cardNumber.length >= 12) && (cardNumber.substring(0,4) === '5018' || cardNumber.substring(0,4) === '5020' || ccardNumber.substring(0,4) === '5038' || cardNumber.substring(0,4) === '6304')) {
+  } else if ((cardNumber.length <= 19 && cardNumber.length >= 12) && (cardNumber.substring(0,4) === '5018' || cardNumber.substring(0,4) === '5020' || cardNumber.substring(0,4) === '5038' || cardNumber.substring(0,4) === '6304')) {
     return 'Maestro'
+  } else if ((cardNumber.length <= 19 && cardNumber.length >= 16) && ((((Number(cardNumber.substring(0,6))) <= 622925) && ((Number(cardNumber.substring(0,6))) >= 622126))) || ((((Number(cardNumber.substring(0,3))) <= 626) && ((Number(cardNumber.substring(0,3))) >= 624))) || (((((Number(cardNumber.substring(0,4))) <= 6288) && ((Number(cardNumber.substring(0,4))) >= 6282))))) {
+    return 'China UnionPay'
   }
 // Note: `cardNumber` will always be a string
 // The Diner's Club network always starts with a 38 or 39 and is 14 digits long
