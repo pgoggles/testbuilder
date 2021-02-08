@@ -219,7 +219,7 @@ describe('China UnionPay', function() {
 describe('Switch', function() {
   // full test coverage for the Switch card
   var expect = chai.expect;
-  var prefixes = ['4903', '4905', '4911', '4936', '564182', '633110', '6333', '6759']
+  var prefixes = ['4903', '4905', '4911', '4936', '564182', '633110', '6333', '6759'];
   for (var i = 0; i < prefixes.length; i++) {
     (function (i) {
       it('has a prefix of ' + prefixes[i] + ' and a length of 16', function () {
