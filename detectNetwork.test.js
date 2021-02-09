@@ -155,7 +155,7 @@ describe('Discover', function() {
       it('has a prefix of ' + i.toString() + ' and a length of 19', function () {
         expect(detectNetwork(i.toString() + '4567890123456789')).to.equal('Discover');
       });
-    }) (i)
+    }) (i);
   }
   it('has a prefix of 65 and a length of 16', function () {
     expect(detectNetwork('6511567890123456')).to.equal('Discover');
@@ -171,17 +171,17 @@ describe('Maestro', function() {
   for (var i = 12; i < 20; i++) {
     (function(i) {
       it('has a prefix of 5018 and a length of ' + i.toString(), function () {
-        expect(detectNetwork('5018'+'1'.repeat(i - 4))).to.equal('Maestro')
-      })
+        expect(detectNetwork('5018' + '1'.repeat(i - 4))).to.equal('Maestro');
+      });
       it('has a prefix of 5020 and a length of ' + i.toString(), function () {
-        expect(detectNetwork('5020'+'1'.repeat(i - 4))).to.equal('Maestro')
-      })
+        expect(detectNetwork('5020' + '1'.repeat(i - 4))).to.equal('Maestro');
+      });
       it('has a prefix of 5038 and a length of ' + i.toString(), function () {
-        expect(detectNetwork('5038'+'1'.repeat(i - 4))).to.equal('Maestro')
-      })
+        expect(detectNetwork('5038' + '1'.repeat(i - 4))).to.equal('Maestro');
+      });
       it('has a prefix of 6304 and a length of ' + i.toString(), function () {
-        expect(detectNetwork('6304'+'1'.repeat(i - 4))).to.equal('Maestro')
-      })
+        expect(detectNetwork('6304' + '1'.repeat(i - 4))).to.equal('Maestro');
+      });
     }) (i);
   }
 });
@@ -193,26 +193,32 @@ describe('China UnionPay', function() {
     for (var j = 16; j < 20; j++) {
       (function(i, j) {
         it('has a prefix of ' + i.toString() + ' and a length of ' + j.toString(), function () {
-          expect(detectNetwork(i.toString() + '1'.repeat(j - i.toString().length))).to.equal('China UnionPay');
+          expect(detectNetwork(i.toString() + '1'.repeat(j - i.toString().length)))
+          .to.equal('China UnionPay');
         });
-    }) (i,j);
-  }}
+      }) (i, j);
+    }
+  }
   for (var i = 624; i < 627; i++) {
     for (var j = 16; j < 20; j++) {
       (function(i, j) {
         it('has a prefix of ' + i.toString() + ' and a length of ' + j.toString(), function () {
-          expect(detectNetwork(i.toString() + '1'.repeat(j - i.toString().length))).to.equal('China UnionPay');
+          expect(detectNetwork(i.toString() + '1'.repeat(j - i.toString().length)))
+          .to.equal('China UnionPay');
         });
-    }) (i,j);
-  }}
+      }) (i, j);
+    }
+  }
   for (var i = 6282; i < 6289; i++) {
     for (var j = 16; j < 20; j++) {
       (function(i, j) {
         it('has a prefix of ' + i.toString() + ' and a length of ' + j.toString(), function () {
-          expect(detectNetwork(i.toString() + '1'.repeat(j - i.toString().length))).to.equal('China UnionPay');
+          expect(detectNetwork(i.toString() + '1'.repeat(j - i.toString().length)))
+          .to.equal('China UnionPay');
         });
-    }) (i,j);
-  }}
+      }) (i, j);
+    }
+  }
 });
 
 
